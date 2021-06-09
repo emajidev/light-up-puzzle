@@ -1,16 +1,13 @@
 import get_matriz from '../functionalities/matriz'
-import view_matriz from '../functionalities/view_matriz'
 import mapper from '../functionalities/mapper'
 
 
 export class LightUp {
 
     constructor() {
-     
         this.matriz = get_matriz()
     }
     init() {
-        //view_matriz(this.matriz);
         let result = this.solution(this.matriz);
         return result;
     }
@@ -39,25 +36,19 @@ export class LightUp {
                 // las columnas van de derecha a izquierda
                 // las filas van de arriba abajo
 
-                //console.log("col", row, ",", col)
                 if (dir == "left") {
                     left = this.y_ray(row, col, map, "col")
-                    console.log(row, col)
-                    console.log("left",left) 
                 }
                 if (dir == "top") {
                     top = this.y_ray(row, col, map, "row")
-                    //console.log(data)
                 }
                 if (dir == "right") {
                     let size_col = this.matriz[0].length
-                    right = this.x_ray(row, col, map, "col", "++",size_col)
-                    //console.log(data)
+                    right = this.x_ray(row, col, map, "col", "++", size_col)
                 }
                 if (dir == "botton") {
                     let size_row = this.matriz.length
-                    botton = this.x_ray(row, col, map, "row", "++",size_row)
-                    //console.log(data)
+                    botton = this.x_ray(row, col, map, "row", "++", size_row)
                 }
                 light_point = {
                     point: [row, col],
@@ -86,23 +77,21 @@ export class LightUp {
                 }
                 if (point.value == 0) {
                     list.push([point.row, point.col])
-                    //console.log(list) 
                 } else {
                     break
                 }
-
             }
             return list
         } else {
             return []
         }
     }
-    x_ray(row, col, map, target, dir = "--",n) {
+    x_ray(row, col, map, target, dir = "--", n) {
         let pos = (target == "col") ? col : row
-        if (pos >= 0 || pos < n-1) {
+        if (pos >= 0 || pos < n - 1) {
             let point
             let list = []
-            while (pos >= 0 && pos < n-1) {
+            while (pos >= 0 && pos < n - 1) {
                 if (dir == "--") { pos-- }
                 if (dir == "++") { pos++ }
 
@@ -114,7 +103,6 @@ export class LightUp {
                 }
                 if (point.value == 0) {
                     list.push([point.row, point.col])
-                    //console.log(list) 
                 } else {
                     break
                 }
@@ -127,17 +115,10 @@ export class LightUp {
     }
     compare(map, lights) {
         let light_select = []
-        /* let max = this.get_max(lights)
-        console.log("max",max)
-        let list_concat = max.left.concat(max.top, max.right, max.botton)
-        console.log("list_concat",list_concat) */
-
         while (true) {
-            console.log("lights size=", lights.length)
             let max = this.get_max(lights)
             light_select.push(max)
             let list_remove = []
-            console.log("max",max)
             let list_concat = max.left.concat(max.top, max.right, max.botton)
             list_concat.forEach(e => {
                 let point = lights.find(element => element.point[0] == e[0] && element.point[1] == e[1]);
@@ -147,13 +128,11 @@ export class LightUp {
                 this.removeItemFromArr(lights, element);
             });
             this.removeItemFromArr(lights, max);
-            //console.log("lights size=", lights.length)
-            if(lights.length == 0){
-                break   
+            if (lights.length == 0) {
+                break
             }
         }
         // light selected for solution
-        console.log(light_select)
         return light_select
     }
     get_max(lights) {
@@ -161,13 +140,12 @@ export class LightUp {
         let light
         // get the maximum
         for (let i = 0; i < lights.length; i++) {
-            console.log("get max",lights[i])
             let size = lights[i].left.length + lights[i].top.length + lights[i].right.length + lights[i].botton.length
             if (max < size) {
                 max = size;
                 light = lights[i]
             }
-            if(size==0){
+            if (size == 0) {
                 return lights[i]
             }
         }
