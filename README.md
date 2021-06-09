@@ -7,7 +7,7 @@ GrainChain Logic Test
 This is a challenge that consists of a very careful electrician who is trying to illuminate at the lowest possible cost the rooms of his clients. The rooms he lights are always matrix rooms. Since light bulbs are very expensive, he tries to illuminate the entire room using the least amount of light.
 the least amount of bulbs possible, but the only bad thing is that the rooms may have walls inside them, in which case, the reach of the light would be interrupted. the range of light from a given bulb would be interrupted.
 
-Technologies
+Technologies used.
 - NodeJs
 - ExpressJs
 - ReactJS
