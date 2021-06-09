@@ -1,6 +1,6 @@
 ### Light-Up Puzzle 
 
-![logging](https://raw.githubusercontent.com/emajidev/light-up-puzzle/main/logo.png)
+![Logo](https://raw.githubusercontent.com/emajidev/light-up-puzzle/main/logo.png)
 
 You need to run the frontend and backend so go into the app-light-up and backend folder and run the following in each one:
 
@@ -8,4 +8,4 @@ You need to run the frontend and backend so go into the app-light-up and backend
 
     npm start
     
-![logging](https://raw.githubusercontent.com/emajidev/light-up-puzzle/main/sample.png)
+![Example app](https://raw.githubusercontent.com/emajidev/light-up-puzzle/main/sample.png)
