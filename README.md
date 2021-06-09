@@ -9,3 +9,5 @@ You need to run the frontend and backend so go into the app-light-up and backend
     npm start
     
 ![Example app](https://raw.githubusercontent.com/emajidev/light-up-puzzle/main/sample.png)
+
+In this example the circles represent the points where the lights are placed. The arrows represent the direction
