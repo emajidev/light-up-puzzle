@@ -12,8 +12,9 @@ Technologies used.
 - ExpressJs
 - ReactJS
 - Babel
+- Bootstrap
 
-You need to run the frontend and backend so go into the app-light-up and backend folder and run the following in each one:
+You need to run the frontend and backend so go into the app and backend folder and run the following in each one:
 
     npm install
 
@@ -36,3 +37,5 @@ To load the matrix you must create a txt file with the name `matrix.txt` and con
     [1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 0],
     [1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0]
     ]
+
+Warning: At the end of the array the last array must not have "," at the end.
